@@ -1,0 +1,9 @@
+/storage/logs/*.log
+/vendor/
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# Không commit cấu hình DB thật (tránh lộ mật khẩu lên GitHub)
+/config/database.php
