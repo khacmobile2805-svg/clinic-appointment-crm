@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * Mẫu cấu hình kết nối MySQL.
+ *
+ * Cách dùng:
+ *   cp config/database.php.example config/database.php      (macOS / Linux)
+ *   copy config\database.php.example config\database.php   (Windows)
+ * rồi điền username / password MySQL trên máy bạn.
+ *
+ * config/database.php đã nằm trong .gitignore — KHÔNG commit file đó.
+ */
+return [
+    'host'     => '127.0.0.1',
+    'database' => 'clinic_appointment_crm',   // trùng tên trong database/schema.sql
+    'username' => 'root',
+    'password' => '',                         // điền mật khẩu MySQL của bạn
+    'charset'  => 'utf8mb4',
+];
