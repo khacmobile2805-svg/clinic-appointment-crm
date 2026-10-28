@@ -12,15 +12,17 @@ statements, CRUD + search / pagination / sort whitelist, kiến trúc MVC 4 tầ
 - Git
 
 ## Cấu hình
-Copy `config/database.php.example` thành `config/database.php` rồi điền mật khẩu MySQL của bạn.
+Copy `config/database.php.example` thành `config/database.php` rồi điền mật khẩu MySQL của bạn:
+```bash
+cp config/database.php.example config/database.php        # macOS / Linux
+copy config\database.php.example config\database.php     # Windows
+```
 `config/database.php` đã nằm trong `.gitignore` để không lộ mật khẩu khi push GitHub.
 
 ## Tạo database
 ```bash
 mysql -u root -p < database/schema.sql
 mysql -u root -p < database/seed.sql        # 2 user + 24 bệnh nhân + 24 lịch hẹn
-# (tùy chọn) seed_bulk.sql ~300 dòng/bảng để thử pagination / EXPLAIN:
-# mysql -u root -p < database/seed_bulk.sql
 ```
 > MySQL Workbench bật "Safe Update" có thể chặn lệnh DELETE — `seed.sql` đã có sẵn
 > `SET SQL_SAFE_UPDATES = 0;` ở đầu file nên import qua Workbench không bị Error 1175.
@@ -76,7 +78,7 @@ app/Services/             Auth, Dashboard, Patient, Appointment (validate, nghi�
 app/Repositories/         User, Dashboard, Patient, Appointment (SQL prepared statements)
 app/Views/                layouts, partials, auth, dashboard, patients, appointments,
                           registration, errors, home
-database/                 schema.sql, seed.sql, seed_bulk.sql
+database/                 schema.sql, seed.sql
 storage/logs/             app.log (lỗi DB / hệ thống)
 ```
 
